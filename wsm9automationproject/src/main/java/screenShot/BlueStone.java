@@ -22,16 +22,16 @@ public class BlueStone {
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
     driver.get("https://www.bluestone.com/");
     driver.findElement(By.id("denyBtn")).click();
-   WebElement coinsTarget = driver.findElement(By.xpath("//a[text()='Coins ']"));
+    WebElement coinsTarget = driver.findElement(By.xpath("//a[text()='Coins ']"));
    
-  Actions act = new Actions(driver);
-  act.moveToElement(coinsTarget).perform();
+    Actions act = new Actions(driver);
+    act.moveToElement(coinsTarget).perform();
   
   driver.findElement(By.xpath("//span[text()='Coins by Design']")).click();
   WebElement coins = driver.findElement(By.xpath("//img[@alt='50 gram 24 KT Lakshmi Gold Coin']"));
               File src = coins.getScreenshotAs(OutputType.FILE);
-             File desc = new File("./Screenshot/src.png");
-            Files.copy(src,desc);
+              File desc = new File("./Screenshot/src.png");
+              Files.copy(src,desc);
                
     
 	}
